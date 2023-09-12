@@ -99,7 +99,7 @@ class JointPredictor:
 
         return ssl_masks, tlm_masks
 
-    def show_image_predictions(self, folder, nxs_no, img_no, use_nms):
+    def show_image_predictions(self, folder, nxs_no, img_no, use_nms=False):
         ssl_masks = self.SSLPred.predict(folder, nxs_no, img_no, show_img=True)
         tlm_masks, tlm_boxes, tlm_scores = self.TLMPred.predict(
             folder, nxs_no, img_no, self.threshold, use_nms
@@ -159,5 +159,6 @@ if __name__ == "__main__":
         0.4,
     )
     # ssl, tlm = jp.predict_one_image("mm24570-1", "794663", 25)
-    ssl, tlm = jp.predict_scan("mm24570-1", "794663", use_ssl=False)
-    jp.generate_3d_plot(tlm, "tlm")
+    jp.show_image_predictions("mm24570-1", "794663", 10)
+    # ssl, tlm = jp.predict_scan("mm24570-1", "794663", use_ssl=False)
+    # jp.generate_3d_plot(tlm, "tlm")
