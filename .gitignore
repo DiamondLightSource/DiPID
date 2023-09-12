@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.devcontainer/
+.vscode/*
+peak_detector/nexus/*
+*.nxs
+*.hdf
+gui.py
+old_code.txt
