@@ -107,7 +107,6 @@ class JointPredictor:
         self.TLMPred.show_output(
             folder, nxs_no, img_no, tlm_masks, tlm_boxes, show_boxes=False
         )
-        # potentially combine predictions to show on one output??
 
     def generate_3d_plot(self, masks: dict[int, np.ndarray], scan_type: str) -> None:
         """Compile all predictions from a scan into a 3d voxel volume
@@ -159,6 +158,6 @@ if __name__ == "__main__":
         0.4,
     )
     # ssl, tlm = jp.predict_one_image("mm24570-1", "794663", 25)
-    jp.show_image_predictions("mm24570-1", "794663", 10)
+    jp.show_image_predictions("mm24570-1", "794663", 50)
     # ssl, tlm = jp.predict_scan("mm24570-1", "794663", use_ssl=False)
     # jp.generate_3d_plot(tlm, "tlm")
